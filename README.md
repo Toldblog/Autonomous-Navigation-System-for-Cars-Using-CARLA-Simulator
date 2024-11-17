@@ -3,12 +3,13 @@
 ## Introduction
 1. **Project Overview**
    
-The "Autonomous-Navigation-System-for-Car" project focuses on developing a self-driving system that integrates two key functionalities: automatic lane-keeping and obstacle detection. The system enables a vehicle to autonomously navigate while staying within lane boundaries and avoiding collisions with obstacles.
+      - The "Autonomous-Navigation-System-for-Car" project focuses on developing a self-driving system that integrates two key functionalities: automatic lane-keeping and obstacle detection. 
+      - The system enables a vehicle to autonomously navigate while staying within lane boundaries and avoiding collisions with obstacles.
 
 3. **Objectives**
    
-Implement an automatic navigation system that ensures the vehicle remains within its designated lane without causing lane invasions.
-Develop an obstacle detection system capable of identifying and stopping the vehicle upon detecting objects within its path.
+      - Implement an automatic navigation system that ensures the vehicle remains within its designated lane without causing lane invasions.
+      - Develop an obstacle detection system capable of identifying and stopping the vehicle upon detecting objects within its path.
 
 ## System Architecture 
 1. **Overall Structure**
