@@ -2,7 +2,7 @@
 
 *.pkl
 
-*.png
+# *.png
 *.jpg
 *.mp4
 
