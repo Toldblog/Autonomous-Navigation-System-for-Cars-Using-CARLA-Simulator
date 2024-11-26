@@ -1,4 +1,19 @@
-# Autonomous-Navigation-and-Collision-Avoidance-Sytem-for-car
+# Autonomous-Navigation-Sytem-for-car
+
+**Demo**
+
+<div align=center>
+  <img src="/images/demo0.png" width="500" />
+  <img src="/images/demo1.png" width="500" height="277"/> 
+</div>
+
+**Segmentation image, data distribution and Training loss**
+
+<div align=center>
+  <img src="/images/1728788476498592800_0_0.0.png" width="300"/>
+  <img src="/images/data_distribution.png" width="400" />
+  <img src="/images/training_validation_loss.png" width="300" />
+</div>
 
 ## Introduction
 1. **Project Overview**
