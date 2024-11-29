@@ -1,65 +1,88 @@
-# Autonomous-Navigation-Sytem-for-car
+# Introduction
+* Project Overview
+      * The "Autonomous-Navigation-System-for-Car" project focuses on developing a self-driving system that integrates two key functionalities: automatic lane-keeping and obstacle detection. 
+      * The system enables a vehicle to autonomously navigate while staying within lane boundaries and avoiding collisions with obstacles.
 
-**Demo**
+* Objectives
+      * Implement an automatic navigation system that ensures the vehicle remains within its designated lane without causing lane invasions.
+      * Develop an obstacle detection system capable of identifying and stopping the vehicle upon detecting objects within its path.
 
+# Features
+* Automatic Lane Navigation:
+    * Generates and follows a random navigation route using semantic segmentation data.
+    * Maintains the car's position within lanes using a deep learning-based steering angle prediction model.
+
+* Obstacle Detection:
+    * Utilizes LiDAR point cloud data to detect obstacles in the car's path.
+    * Stops the car when obstacles are detected.
+
+* Deep Learning Integration:
+    * A neural network is trained on semantic segmentation images and navigation direction labels to predict steering angles.
+
+# System Architecture
+**The system consists of two main components:**
+* Perception Module:
+    * LiDAR sensor for obstacle detection.
+    * Semantic segmentation camera for lane and navigation detection.
+
+* Control Module:
+    * A deep learning-based controller trained to predict the steering angle based on semantic images and navigation labels.
+    * Speed control using a throttle-braking mechanism.
+
+
+# Dataset Preparation
+* Semantic Segmentation Images:
+    * Generated using CARLA's semantic segmentation camera.
+    * Images are labeled with steering angles and navigation directions.
+  
 <div align=center>
-  <img src="/images/demo0.png" width="500" />
-  <img src="/images/demo1.png" width="500" height="277"/> 
+  <img src="/images/1728788476498592800_0_0.0.png" width="300" />
 </div>
 
-**Segmentation image, data distribution and Training loss**
-
+* LiDAR Point Cloud Data:
+    * Captures real-time obstacle data.
 <div align=center>
-  <img src="/images/1728788476498592800_0_0.0.png" width="300"/>
+  <img src="/images/cloud_point_data.png" width="300" />
+</div>
+
+* Data Statistics:
+**Distribution of steering angles and navigation directions:**
+<div align=center>
   <img src="/images/data_distribution.png" width="400" />
-  <img src="/images/training_validation_loss.png" width="300" />
 </div>
 
-## Introduction
-1. **Project Overview**
-   
-      - The "Autonomous-Navigation-System-for-Car" project focuses on developing a self-driving system that integrates two key functionalities: automatic lane-keeping and obstacle detection. 
-      - The system enables a vehicle to autonomously navigate while staying within lane boundaries and avoiding collisions with obstacles.
 
-3. **Objectives**
-   
-      - Implement an automatic navigation system that ensures the vehicle remains within its designated lane without causing lane invasions.
-      - Develop an obstacle detection system capable of identifying and stopping the vehicle upon detecting objects within its path.
+# Implementation Details
+* Sensors Used:
+    * LiDAR: Detects obstacles and processes point cloud data.
+    * Semantic Segmentation Camera: Captures road lanes and other objects in a segmented format.
 
-## System Architecture 
-1. **Overall Structure**
-    - Automatic Navigation System: Controls the vehicle's path, keeping it on track using real-time data processing.
-    - Obstacle Detection System: Detects obstacles using sensors and halts vehicle motion when necessary.
+* Key Algorithms:
+    * Route Selection: Uses CARLA's GlobalRoutePlanner to generate navigation routes.
+    * Obstacle Detection: Filters LiDAR points within a defined region of interest (ROI).
 
-2. **Data Flow and Interactions**
-    - Sensors such as cameras and LiDAR collect data from the environment.
-    - Image processing and point cloud data are processed using trained deep learning models to control vehicle movements.
+* Control Logic:
+    * Predicted steering angles control the car's direction.
+    * Throttle-braking logic maintains a preferred speed.
 
-## System Design and Implementation
-### Automatic Navigation System
-1. **Data Generation for Training**
-    - Environment Setup: The system uses the CARLA simulator to generate training data.
-    - Sensors: The vehicle is equipped with RGB and semantic segmentation cameras.
-    - Route Simulation: Random routes are generated to simulate real-world driving conditions.
-    - Data Collection: Data includes semantic segmentation images and steering angles.
+# Results
+* Steering Angle Prediction:
+    * Achieved smooth lane following with minimal deviations.
 
-2. **Model Architecture**
-    - Model Used: The navigation model is a convolutional neural network (CNN) designed to predict the steering angle required to maintain the lane.
-    - Training Process: The model is trained using labeled data to predict steering directions based on image inputs.
+* Obstacle Detection:
+    * Accurate detection of obstacles using LiDAR.
+    * Immediate stopping when an obstacle is detected.
 
-### Obstacle Detection System
-1. **Data Generation**
-    - Environment Setup: The system uses the CARLA simulator to generate training data.
-    - Sensors used:
-      - LiDAR sensor collects 3D point cloud data and converts it to PGM files, which store grayscale 2D images.
-      - The Segmentation Camera collects segmentation images.
-      - The Obstacle Detector sensor detects obstacles in front of the car.
-    - Data collection includes semantic segmentation photos, PGM files, and labels that indicate whether or not there is an obstacle in front of the car.
 
-*Note: All of these sensors are built-in sensors of the CARLA simulator.
+<div align=center>
+  <img src="/images/training_validation_loss.png" width="400" />
+</div>
 
-2. **Model Architecture**
-    - Model Used: The obstacle detection model is a CNN-based architecture trained to predict the presence of obstacles using combined inputs from PGM files and semantic images.
+<div align=center>
+  <img src="/images/demo.png" width="400"/>
+  <img src="/images/demo1.png" width="400" height="238"/> 
+</div>
+
 
 
 
