@@ -1,20 +1,20 @@
 # Introduction
 * **Project Overview**
-      * The "Autonomous-Navigation-System-for-Car" project focuses on developing a self-driving system that integrates two key functionalities: automatic lane-keeping and obstacle detection. 
-      * The system enables a vehicle to autonomously navigate while staying within lane boundaries and avoiding collisions with obstacles.
+     * The "Autonomous-Navigation-System-for-Car" project focuses on developing a self-driving system that integrates two key functionalities: automatic lane-keeping and obstacle detection. 
+     * The system enables a vehicle to autonomously navigate while staying within lane boundaries and avoiding collisions with obstacles.
 
 * **Objectives**
-      * Implement an automatic navigation system that ensures the vehicle remains within its designated lane without causing lane invasions.
-      * Develop an obstacle detection system capable of identifying and stopping the vehicle upon detecting objects within its path.
+     * Implement an automatic navigation system that ensures the vehicle remains within its designated lane without causing lane invasions.
+     * Develop an obstacle detection system capable of identifying and stopping the vehicle upon detecting objects within its path.
 
 # Features
 * **Automatic Lane Navigation:**
-    * Generates and follows a random navigation route using semantic segmentation data.
-    * Maintains the car's position within lanes using a deep learning-based steering angle prediction model.
+     * Generates and follows a random navigation route using semantic segmentation data.
+     * Maintains the car's position within lanes using a deep learning-based steering angle prediction model.
 
 * **Obstacle Detection:**
-    * Utilizes LiDAR point cloud data to detect obstacles in the car's path.
-    * Stops the car when obstacles are detected.
+     * Utilizes LiDAR point cloud data to detect obstacles in the car's path.
+     * Stops the car when obstacles are detected.
 
 * **Deep Learning Integration:**
     * A neural network is trained on semantic segmentation images and navigation direction labels to predict steering angles.
